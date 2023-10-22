@@ -24,8 +24,8 @@ fi
 
 apt install git -y
 
-sed -i "s/hori/$hora/g" $GIT/MirrorSC.yml
-sed -i "s/horis/$1/g" $GIT/MirrorSC.yml
+sed -i "s/hori/$hora/g" .github/workflows/MirrorSC.yml
+sed -i "s/horis/$1/g" .github/workflows/MirrorSC.yml
 
 git add -f .
 git commit -m "Activando: $1 horas,numero de activacion: $random"
