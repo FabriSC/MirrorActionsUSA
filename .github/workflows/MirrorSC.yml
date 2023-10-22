@@ -56,5 +56,5 @@ jobs:
         continue-on-error: true
         run: |
           cd SC
-          git commit --allow-empty -m "[LOOP] Mirror USA Corriendo por s horas"
+          git commit --allow-empty -m "[LOOP] Mirror USA Corriendo por 1 horas"
           git push -f
