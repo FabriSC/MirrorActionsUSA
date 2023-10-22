@@ -1,6 +1,6 @@
-$GIT=`pwd`.github/workflows
+
 echo "Iniciando el bot..."
-if [[ "$1" = "1" ]]; then
+if [[ "1" = "$1" ]]; then
 $hora=3600
 fi
 if [[ "2" = "$1" ]]; then
