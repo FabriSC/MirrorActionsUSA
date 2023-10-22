@@ -36,7 +36,7 @@ jobs:
         continue-on-error: true
         run: |
           git clone https://github.com/FabriSC/fabriscmirror.git MirrorSC
-          git clone https://github.com/FabriSC/MirrorSC-Actions.git SC
+          git clone https://github.com/FabriSC/fabriscmirror.git SC
    
       - name: Instalando Dcker
         continue-on-error: true
