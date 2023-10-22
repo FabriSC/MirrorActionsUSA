@@ -9,7 +9,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 
+    timeout-minutes: 3600
 
     steps:
       - name: Checkeando y Limpiando vps
@@ -48,5 +48,5 @@ jobs:
         continue-on-error: true
         run: |
           cd SC
-          git commit --allow-empty -m "[LOOP] Mirror USA Corriendo por  horas"
+          git commit --allow-empty -m "[LOOP] Mirror USA Corriendo por 1 horas"
           git push -f
