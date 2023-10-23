@@ -1,0 +1,52 @@
+name: MirrorSC-Actions
+on:
+  push:
+    branches: [sc]
+
+env:
+  TZ: America/Recife
+      
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 21600
+
+    steps:
+      - name: Checkeando y Limpiando vps
+        uses: actions/checkout@main
+      - uses: rokibhasansagar/slimhub_actions@main
+
+      - name: Configurando Instancia
+        run: |
+          git config --global user.email "u22216510@utp.edu.pe"
+          git config --global user.name "FabriSC" 
+          git config --global pull.rebase false
+          git config --global credential.helper store
+          echo "https://FabriSC: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@github.com" > ~/.git-credentials
+
+      - name: Clonando Repositorio
+        continue-on-error: true
+        run: |
+          git clone https://github.com/FabriSC/fabriscmirror.git MirrorSC
+          git clone https://github.com/FabriSC/fabriscmirror.git SC
+   
+      - name: Instalando Dcker
+        continue-on-error: true
+        run: |
+          curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
+       
+      - name: Corriendo el Bot
+        timeout-minutes: 320
+        continue-on-error: true
+        run: |
+          cd MirrorSC
+          docker build . --rm --force-rm --compress --no-cache=true --pull --file Dockerfile -t mirror-bot
+          docker run --privileged --rm -i mirror-bot
+           
+      - name: Proceso de Automizacion
+        timeout-minutes: 5
+        continue-on-error: true
+        run: |
+          cd SC
+          git commit --allow-empty -m "[LOOP] Mirror USA Corriendo por 6 horas"
+          git push -f
