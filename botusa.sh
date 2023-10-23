@@ -1,18 +1,19 @@
 if [[ "1" = "$1" ]]; then
-  hora=3600
+  hora=60
 elif [[ "2" = "$1" ]]; then
-  hora=7200
+  hora=120
 elif [[ "3" = "$1" ]]; then
-  hora=10800
+  hora=180
 elif [[ "4" = "$1" ]]; then
-  hora=14400
+  hora=240
 elif [[ "5" = "$1" ]]; then
-  hora=18000
+  hora=300
 elif [[ "6" = "$1" ]]; then
-  hora=21600
+  hora=360
 else
   echo "Error: solo se puede establecer de 1 a 6 horas, aplicando cambios automáticos..."
   echo "Inicie de nuevo el código"
+  exit
 fi
 
 apt install git -y

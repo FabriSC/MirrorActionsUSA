@@ -9,7 +9,7 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 21600
+    timeout-minutes: 525600
 
     steps:
       - name: Checkeando y Limpiando vps
@@ -36,7 +36,7 @@ jobs:
           curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
        
       - name: Corriendo el Bot
-        timeout-minutes: 320
+        timeout-minutes: 360
         continue-on-error: true
         run: |
           cd MirrorSC
@@ -47,6 +47,5 @@ jobs:
         timeout-minutes: 5
         continue-on-error: true
         run: |
-          cd SC
-          git commit --allow-empty -m "[LOOP] Mirror USA Corriendo por 6 horas"
-          git push -f
+          echo "[LOOP] Mirror USA Corriendo por 6 horas"
+         
