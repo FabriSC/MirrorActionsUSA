@@ -22,7 +22,7 @@ jobs:
           git config --global user.name "FabriSC" 
           git config --global pull.rebase false
           git config --global credential.helper store
-          echo "https://FabriSC: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@github.com" > ~/.git-credentials
+          echo "https://${{ secrets.GH_NAME }}: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@github.com" > ~/.git-credentials
 
       - name: Clonando Repositorio
         continue-on-error: true
@@ -36,7 +36,7 @@ jobs:
           curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh
        
       - name: Corriendo el Bot
-        timeout-minutes: 360
+        timeout-minutes: 60
         continue-on-error: true
         run: |
           cd MirrorSC
@@ -47,5 +47,5 @@ jobs:
         timeout-minutes: 5
         continue-on-error: true
         run: |
-          echo "[LOOP] Mirror USA Corriendo por 6 horas"
+          echo "[LOOP] Mirror USA Corriendo por 1 horas"
          
