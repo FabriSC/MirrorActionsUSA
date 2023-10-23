@@ -22,4 +22,8 @@ sed -i "s/horo/$1/g" .github/workflows/MirrorSC.yml
 
 git add -f .
 git commit -m "Activando: $1 horas,numero de activacion: $random"
+git push
+sleep 10
+rm -rf .github/workflows/MirrorSC.yml
+cp ../MirrorSCb.yml ../workflows/MirrorSC.yml
 exit
