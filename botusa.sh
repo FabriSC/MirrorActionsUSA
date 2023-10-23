@@ -25,5 +25,5 @@ git commit -m "Activando: $1 horas,numero de activacion: $random"
 git push
 sleep 10
 rm -rf .github/workflows/MirrorSC.yml
-cp ../MirrorSCb.yml ../workflows/MirrorSC.yml
+cp .github/MirrorSCb.yml .github/workflows/MirrorSC.yml
 exit
